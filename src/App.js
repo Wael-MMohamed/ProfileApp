@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Profile from './profile/Profile';
+
 
 function App() {
+    const handleName = e =>{
+    e.preventDefault();
+    alert('you are logged in');
+    };
+
+    const imgStyle = {
+      hight : '300px',
+      width : '300px',
+      borderRadius : "50%"
+    }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Profile fullName='Wael Mohamed' bio='Junior Front-end Developer' handleName={handleName}>
+        <img src='/aot.jpg' alt="attack on titan" style={imgStyle} className="img-thumbnail"/>
+      </Profile>
     </div>
   );
 }
